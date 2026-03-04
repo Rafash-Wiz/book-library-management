@@ -15,6 +15,8 @@ public class Employee {
     private String firstName;
     private String lastName;
     private LocalDate dateOfBirth;
+
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     public Employee() {
