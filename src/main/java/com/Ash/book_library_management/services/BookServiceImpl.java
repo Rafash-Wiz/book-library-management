@@ -82,6 +82,10 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<BookDTO> getBooksByAuthorId(Long authorId) {
-        return List.of();
+        return bookRepository.findAll()
+                .stream()
+                .filter(book -> book.getAuthor().getId().equals(authorId))
+                .map(bookMapper::toDto)
+                .collect(Collectors.toList());
     }
 }

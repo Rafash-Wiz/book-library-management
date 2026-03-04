@@ -7,11 +7,13 @@ import com.Ash.book_library_management.entity_DTO.EmployeeDTO;
 import com.Ash.book_library_management.entity_Mappers.EmployeeMapper;
 import com.Ash.book_library_management.entity_Mappers.EmployeeMapperImpl;
 import com.Ash.book_library_management.repository.EmployeeRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
 public class EmployeeServiceImpl implements EmployeeService{
 
     private final EmployeeRepository employeeRepository;
@@ -68,5 +70,13 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Override
     public void deleteEmployee(Long id) {
         employeeRepository.deleteById(id);
+    }
+
+    public List<EmployeeDTO> getEmployeesByRole(Role role) {
+        List<Employee> employees = employeeRepository.findByRole(role);
+
+        return employees.stream()
+                .map(employeeMapper::toDto)
+                .collect(Collectors.toList());
     }
 }
