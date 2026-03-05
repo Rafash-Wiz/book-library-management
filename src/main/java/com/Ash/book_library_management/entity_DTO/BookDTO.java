@@ -9,15 +9,17 @@ public class BookDTO {
     private Long authorId;
     private String genre;
     private int year;
+    private int quantity;
 
     public BookDTO() {
     }
 
-    public BookDTO(String title, Long authorId, String genre, int year) {
+    public BookDTO(String title, Long authorId, String genre, int year, int quantity) {
         this.title = title;
         this.authorId = authorId;
         this.genre = genre;
         this.year = year;
+        this.quantity = quantity;
     }
 
     public long getId() {
@@ -58,5 +60,13 @@ public class BookDTO {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
