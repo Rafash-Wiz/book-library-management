@@ -50,6 +50,12 @@ public class BorrowingRecordServiceImpl implements BorrowingRecordService{
             return null;
         }
 
+        List<BorrowingRecord> sameBookActive = borrowingRecordRepository
+                .findByMemberIdAndBookIdAndReturnedFalse(member.getId(), book.getId());
+        if (!sameBookActive.isEmpty()) {
+            return null;
+        }
+
 
         BorrowingRecord borrowingRecord = borrowingRecordMapper.toEntity(borrowingRecordDTO);
 

@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface BorrowingRecordRepository extends JpaRepository<BorrowingRecord, Long> {
     List<BorrowingRecord> findByMemberIdAndReturnedFalse(Long memberId);
+    List<BorrowingRecord> findByMemberIdAndBookIdAndReturnedFalse(Long memberId, Long bookId);
 }
