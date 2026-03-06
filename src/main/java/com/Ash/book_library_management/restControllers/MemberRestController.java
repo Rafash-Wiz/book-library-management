@@ -48,5 +48,17 @@ public class MemberRestController {
         return ResponseEntity.noContent().build();
     }
 
+    @PutMapping("/{id}/activate")
+    public ResponseEntity<MemberDTO> activateMember(@PathVariable Long id) {
+        MemberDTO activatedMember = memberService.activateMember(id);
+        return ResponseEntity.ok(activatedMember);
+    }
+
+    @PutMapping("/{id}/deactivate")
+    public ResponseEntity<MemberDTO> deactivateMember(@PathVariable Long id) {
+        MemberDTO deactivatedMember = memberService.deactivateMember(id);
+        return ResponseEntity.ok(deactivatedMember);
+    }
+
 
 }

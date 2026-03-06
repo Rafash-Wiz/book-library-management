@@ -65,4 +65,20 @@ public class MemberServiceImpl implements MemberService{
     public void deleteMember(Long id) {
         memberRepository.deleteById(id);
     }
+
+    @Override
+    public MemberDTO activateMember(Long memberId) {
+        Member member = memberRepository.findById(memberId).orElse(null);
+        member.setActive(true);
+        memberRepository.save(member);
+        return memberMapper.toDto(member);
+    }
+
+    @Override
+    public MemberDTO deactivateMember(Long memberId) {
+        Member member = memberRepository.findById(memberId).orElse(null);
+        member.setActive(false);
+        memberRepository.save(member);
+        return memberMapper.toDto(member);
+    }
 }

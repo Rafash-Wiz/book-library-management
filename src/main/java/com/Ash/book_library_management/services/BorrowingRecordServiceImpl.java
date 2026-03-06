@@ -40,7 +40,7 @@ public class BorrowingRecordServiceImpl implements BorrowingRecordService{
         Member member = memberRepository.findById(borrowingRecordDTO.getMemberId()).orElse(null);
         Book book = bookRepository.findById(borrowingRecordDTO.getBookId()).orElse(null);
 
-        if (member == null || book == null || book.getQuantity() <= 0) {
+        if (member == null || !member.isActive() || book == null || book.getQuantity() <= 0) {
             return null;
         }
 

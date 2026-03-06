@@ -18,4 +18,8 @@ public interface MemberService {
 
     void deleteMember(Long id);
 
+    public MemberDTO activateMember(Long memberId);
+
+    public MemberDTO deactivateMember(Long memberId);
+
 }
