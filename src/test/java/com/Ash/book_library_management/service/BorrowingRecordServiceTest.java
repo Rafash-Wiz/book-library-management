@@ -90,18 +90,18 @@ class BorrowingRecordServiceTest {
         Book book = new Book("Clean Code", null, "Programming", 2008, 0); // quantity = 0
         book.setId(1L);
 
-        BorrowingRecordDTO dto = new BorrowingRecordDTO();
-        dto.setMemberId(member.getId());
-        dto.setBookId(book.getId());
-        dto.setBorrowDate(LocalDate.now());
-        dto.setBorrowPeriodWeeks(2);
+        BorrowingRecordDTO borrowingRecordDTO = new BorrowingRecordDTO();
+        borrowingRecordDTO.setMemberId(member.getId());
+        borrowingRecordDTO.setBookId(book.getId());
+        borrowingRecordDTO.setBorrowDate(LocalDate.now());
+        borrowingRecordDTO.setBorrowPeriodWeeks(2);
 
         // mock behavior
         when(memberRepository.findById(member.getId())).thenReturn(Optional.of(member));
         when(bookRepository.findById(book.getId())).thenReturn(Optional.of(book));
 
         // when
-        BorrowingRecordDTO result = borrowingRecordService.borrowBook(dto);
+        BorrowingRecordDTO result = borrowingRecordService.borrowBook(borrowingRecordDTO);
 
         // then
         assertNull(result);
