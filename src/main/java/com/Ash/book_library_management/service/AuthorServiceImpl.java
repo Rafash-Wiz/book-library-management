@@ -58,7 +58,7 @@ public class AuthorServiceImpl implements AuthorService{
             return authorMapper.toDto(updatedAuthor);
         }
 
-        return null; // or handle "not found" case later
+        return null;
     }
 
     @Override
