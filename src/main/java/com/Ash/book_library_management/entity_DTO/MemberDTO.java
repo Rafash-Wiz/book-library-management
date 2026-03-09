@@ -12,14 +12,6 @@ public class MemberDTO {
 
     public MemberDTO() {}
 
-    public MemberDTO(Long id, String firstName, String lastName, LocalDate dateOfBirth, boolean active) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
-        this.active = active;
-    }
-
     public Long getId() {
         return id;
     }

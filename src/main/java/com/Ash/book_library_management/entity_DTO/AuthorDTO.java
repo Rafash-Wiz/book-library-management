@@ -9,16 +9,7 @@ public class AuthorDTO {
     private LocalDate dateOfBirth;
     private String countryOfOrigin;
 
-    public AuthorDTO(){
-
-    }
-
-    public AuthorDTO (String firstName, String lastName, LocalDate dateOfBirth, String countryOfOrigin) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
-        this.countryOfOrigin = countryOfOrigin;
-    }
+    public AuthorDTO(){}
 
     public Long getId() {
         return id;

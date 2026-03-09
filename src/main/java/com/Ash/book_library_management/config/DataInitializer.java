@@ -31,7 +31,7 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // Prevent duplicate entries
+
         if (authorRepository.count() > 0 || employeeRepository.count() > 0) {
             System.out.println("Data already exists. Skipping initialization.");
             return;

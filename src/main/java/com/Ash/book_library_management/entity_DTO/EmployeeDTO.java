@@ -12,15 +12,7 @@ public class EmployeeDTO {
     private LocalDate dateOfBirth;
     private Role role;
 
-    public EmployeeDTO() {
-    }
-
-    public EmployeeDTO(String firstName, String lastName, Role role, LocalDate dateOfBirth) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
-        this.role = role;
-    }
+    public EmployeeDTO() {}
 
     public Long getId() {
         return id;

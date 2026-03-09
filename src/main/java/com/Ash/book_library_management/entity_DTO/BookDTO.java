@@ -11,16 +11,7 @@ public class BookDTO {
     private int year;
     private int quantity;
 
-    public BookDTO() {
-    }
-
-    public BookDTO(String title, Long authorId, String genre, int year, int quantity) {
-        this.title = title;
-        this.authorId = authorId;
-        this.genre = genre;
-        this.year = year;
-        this.quantity = quantity;
-    }
+    public BookDTO() {}
 
     public long getId() {
         return id;
